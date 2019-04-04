@@ -7,13 +7,13 @@
           <!--点餐-->
           <el-tab-pane label="点餐">
             <el-table :data="tableData" style="width: 100%">
-              <el-table-column prop="goodsName" label="商品名称">
+              <el-table-column prop="goodsName" label="商品名称"width="120">
               </el-table-column>
-              <el-table-column prop="count" label="数量" width="130">
+              <el-table-column prop="count" label="数量" width="100">
               </el-table-column>
-              <el-table-column prop="price" label="金额" width="130">
+              <el-table-column prop="price" label="金额" width="100">
               </el-table-column>
-              <el-table-column label="操作" width="150" fixed="right">
+              <el-table-column label="操作" width="100">
                 <template scope="scope">
                   <el-button type="text" size="small" @click="deletegoods(scope.row)">删除</el-button>
                   <el-button type="text" size="small" @click="addgoods(scope.row)">增加</el-button>
@@ -81,13 +81,7 @@
       </el-col>
     </el-row>
     <!--汉堡 儿童套餐区-->
-    <div class="block">
-      <el-carousel height="305px">
-        <el-carousel-item v-for="item in oppo" :key="item">
-          <img :src="item.img"/>
-        </el-carousel-item>
-      </el-carousel>
-    </div>
+
   </div>
 </template>
 
@@ -252,6 +246,7 @@
   .pos {
     font-size: 16px;
     background-color: #F9FAFC;
+    overflow: auto;
   }
 
   .pos-order {
@@ -299,11 +294,10 @@
 
   .cookList li {
     list-style: none;
-    width: 19%;
+    width: 22%;
     border: 1px solid #E5E9F2;
-    overflow: hidden;
     background-color: #fff;
-    padding: 2px;
+    padding: 5px;
     float: left;
     margin: 5px;
     cursor: pointer;
